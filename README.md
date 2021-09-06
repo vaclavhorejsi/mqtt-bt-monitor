@@ -44,7 +44,6 @@ docker-compose up -d
 ```
 
 ## **Check logs**
-If "debug" is se to true, you are able to check detailed log
 ```
 docker-compose logs -f
 ```
