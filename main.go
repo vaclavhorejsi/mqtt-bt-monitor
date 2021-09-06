@@ -19,6 +19,7 @@ var c mqtt.Client
 
 type config struct {
 	Delay   int
+	Debug   bool
 	Devices []device
 	MQTT    struct {
 		Server   string
@@ -63,7 +64,9 @@ func (e checkDevice) Run() {
 
 	msgJSON, _ := json.Marshal(msg)
 
-	fmt.Println(string(msgJSON))
+	if cfg.Debug {
+		fmt.Println(string(msgJSON))
+	}
 	c.Publish(cfg.MQTT.Topic+"/"+cfg.Devices[i].Name, 1, false, msgJSON)
 
 	runCount++
