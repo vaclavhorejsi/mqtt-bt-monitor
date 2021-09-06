@@ -68,6 +68,7 @@ func (e checkDevice) Run() {
 		fmt.Println(string(msgJSON))
 	}
 	c.Publish(cfg.MQTT.Topic+"/"+cfg.Devices[i].Name, 1, false, msgJSON)
+	c.Publish(cfg.MQTT.Topic, 1, false, "online")
 
 	runCount++
 }
