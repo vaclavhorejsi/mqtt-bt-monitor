@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    privileged: true
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Prague
+    network_mode: host
+    volumes:
+      - ./config.json:/app/config.json
