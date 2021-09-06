@@ -1,6 +1,6 @@
 # **MQTT BT Monitor**
 
-Repeatedly scan BT devices nearby from Raspberry Pi and send status to MQTT.
+Repeatedly scan nearby BT devices from Raspberry Pi and send status to MQTT.
 
 ## **Prerequisities**
 * Raspberry PI (tested on 3A+, 3B, Zero W)
