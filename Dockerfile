@@ -21,7 +21,7 @@ RUN echo "http://147.32.232.215/alpine/v3.14/main" > /etc/apk/repositories
 RUN echo "http://147.32.232.215/alpine/v3.14/community" >> /etc/apk/repositories
 
 RUN apk update && apk upgrade
-RUN apk add tzdata bash bluez
+RUN apk add tzdata bluez
 
 EXPOSE 80/tcp
 
