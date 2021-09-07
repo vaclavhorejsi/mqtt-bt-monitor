@@ -11,6 +11,7 @@
         "server": "mqtt.example.com",
         "port": "1883",
         "topic": "btmonitor",
+        "retained": false,
         "username": "",
         "password": ""
     }

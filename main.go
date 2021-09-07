@@ -25,6 +25,7 @@ type config struct {
 		Server   string
 		Port     string
 		Topic    string
+		Retained bool
 		Username string
 		Password string
 	}
@@ -67,7 +68,7 @@ func (e checkDevice) Run() {
 	if cfg.Debug {
 		fmt.Println(string(msgJSON))
 	}
-	c.Publish(cfg.MQTT.Topic+"/"+cfg.Devices[i].Name, 1, false, msgJSON)
+	c.Publish(cfg.MQTT.Topic+"/"+cfg.Devices[i].Name, 1, cfg.MQTT.Retained, msgJSON)
 	c.Publish(cfg.MQTT.Topic, 1, false, "online")
 
 	runCount++
