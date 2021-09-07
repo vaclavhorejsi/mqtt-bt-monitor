@@ -1,6 +1,6 @@
 # **MQTT BT Monitor**
 
-Repeatedly scan nearby BT devices from Raspberry Pi and send status to MQTT.
+Repeatedly scan nearby list of BT devices from Raspberry Pi and send status to MQTT.
 
 ## **Prerequisities**
 * Raspberry PI (tested on 3A+, 3B, Zero W)
@@ -20,18 +20,19 @@ docker-compose build
 Edit config.json file to your needs
 ```
 {
-    "delay": 30,
-    "debug": false,
-    "devices": [
+    "delay": 30,                            // Delay between tests
+    "debug": false,                         // Detailed log
+    "devices": [                            // Device list
         {
-            "name": "my-phone",
-            "mac": "XX:XX:XX:XX:XX:XX"
+            "name": "my-phone",             // Name showed in MQTT
+            "mac": "XX:XX:XX:XX:XX:XX"      // BTMAC of tested device
         }
     ],
-    "mqtt": {
-        "server": "mqtt.example.com",
-        "port": "1883",
-        "topic": "btmonitor",
+    "mqtt": {                               // MQTT settings
+        "server": "mqtt.example.com",       // Server address (only mqtt protocol supported)
+        "port": "1883",                     // Port
+        "topic": "btmonitor",               // Topic where messages will be propagate
+        "retained": false,                  // Retained messages
         "username": "",
         "password": ""
     }
